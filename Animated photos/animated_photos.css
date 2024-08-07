@@ -1,0 +1,45 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 97vh; /*since my computer is 97vh i wrote the height like that. you can write 100vh.*/
+    margin: 0;
+    overflow: hidden;
+}
+
+.container {
+    display: flex;
+    width: 90vw;
+}
+
+.panel {
+    background-size: auto 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 80vh;
+    border-radius: 100px;
+    cursor: pointer;
+    flex: 0.8;
+    margin: 10px;
+    position: relative;
+    transition: flex 0.7s ease-in;
+    height: 600px;
+}
+
+.panel.active {
+    flex: 4;
+}
+
+/*the last 2 images are not visible on devices with a width of 600px.*/
+@media (max-width:600px) {
+    .container {
+        width: 100vw;
+    }
+    .panel:nth-of-type(4), .panel:nth-of-type(5) {
+        display: none;
+    }
+}
